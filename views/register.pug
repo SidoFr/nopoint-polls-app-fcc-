@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    form.register-form(action="/register" method="POST")
+        h2 REGISTER
+        label(for="name") Name
+        input(type="text" name="name" autocomplete="off")
+        label(for="password") Password
+        input(type="password" name="password")
+        input(type="submit" value="Register")
+    ul.auth-login
+        li.login__fb: a(href="/auth/facebook") Login with Facebook
+        li.login__twitter: a(href="/auth/twitter") Login with Twitter

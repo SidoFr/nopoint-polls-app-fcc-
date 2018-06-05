@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h2.creation__title Create a new poll
+    form.creation-form(action="./create-poll" method="POST")
+        label(for="title") Title
+        input(type="text" name="title" autocomplete="off" required)
+        label(for="option1") Options
+        textarea(class="opt base" rows="2" cols="50" maxlength="100" placeholder="100 max carac" name="option1" autocomplete="off" required)
+        textarea(class="opt base" rows="2" cols="50" maxlength="100" name="option2" autocomplete="off" required)
+        textarea(class="opt more" rows="2" cols="50" maxlength="100" name="option3" autocomplete="off")
+        textarea(class="opt more" rows="2" cols="50" maxlength="100" name="option4" autocomplete="off")
+        textarea(class="opt more" rows="2" cols="50" maxlength="100" name="option5" autocomplete="off")
+        textarea(class="opt more" rows="2" cols="50" maxlength="100" name="option6" autocomplete="off")
+        textarea(class="opt more" rows="2" cols="50" maxlength="100" name="option7" autocomplete="off")
+        textarea(class="opt more" rows="2" cols="50" maxlength="100" name="option8" autocomplete="off")
+        textarea(class="opt more" rows="2" cols="50" maxlength="100" name="option9" autocomplete="off")
+        textarea(class="opt more" rows="2" cols="50" maxlength="100" name="option10" autocomplete="off")
+        input(type="submit" value="create")

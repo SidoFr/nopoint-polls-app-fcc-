@@ -1,0 +1,19 @@
+extends layout
+
+block header
+
+block content
+    .home
+        h1.home__title No points polls app!
+        h3.home__text Create and share polls with your friends!
+        .home__buttons
+            button.home__buttons__discover: a(href="/polls") Discover
+            button.home__buttons__log: a(href="/register") Register
+            button.home__buttons__discover: a(href="/login") Login
+
+block footer
+    footer
+        i.fa.fa-copyright(aria-hidden="true") Made with love by
+        a(href="https://github.com/SidoFr", target="blank"): i.fab.fa-github  Nepenthes
+        br
+        a(href="https://twitter.com/SidoMee", target="blank"): i.fab.fa-twitter

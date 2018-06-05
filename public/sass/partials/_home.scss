@@ -1,0 +1,45 @@
+.home {
+    min-height: 100vh;
+    margin: 0;
+    background-image: $gradient;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: $beige;
+    text-align: center;
+    font-family: $jua;
+    &__title {
+        margin-top: 0;
+        text-transform: uppercase;
+        font-size: 2.5em;
+        line-height: 1.8em;
+    }
+    &__text {
+        margin: 0;
+        font-size: 2em;
+    }
+    &__buttons {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        @media #{$phone} {
+            width: 98%;
+        }
+        button {
+            width: 120px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: $beige;
+            border: outset 3px $soft;
+            line-height: 1.5em;
+            a {
+                color: $soft;
+            }
+        }
+    }
+}
+footer {
+    background-color: $beige;
+    padding: 50px 0 25px 0;
+}

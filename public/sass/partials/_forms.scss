@@ -1,0 +1,100 @@
+// general
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    color: $darker;
+    font-family: $raleway;
+    * {
+        margin: 5px;
+    }
+    h2 {
+        color: $grad_orange;
+        font-family: $jua;
+        margin: 20px 0;
+    }
+    label {
+        font-family: $raleway;
+        color: $grad_orange;
+    }
+    input[type=text], input[type=email], input[type=password] {
+        width: 30%;
+        height: 35px;
+        border-radius: 5px;
+        border: 4px solid $soft;
+        text-align: center;
+        background-color: $beige;
+        @media #{$phone} {
+            width: 60%;
+        }
+    }
+    input[type=submit] {
+        width: 10%;
+        border-radius: 5px;
+        margin: 15px;
+        @media #{$phone} {
+            width: 35%;
+        }
+    }
+}
+// creation, edition spec: textarea
+textarea {
+    width: 30%;
+    height: 35px;
+    border-radius: 90px;
+    border: inset  4px $grad_green;
+    text-align: center;
+    background-color: $beige;
+    outline: none;
+    @media #{$phone} {
+        width: 60%;
+    }
+}
+// edition spec
+.modify__title, .creation__title {
+    color: $grad_orange;
+    text-transform: uppercase;
+    font-family: $jua;
+}
+.modify > input[type=submit] {
+    width: 20%;
+    height: 30px;
+    border-color: $grad_pink;
+    background-color: $beige;
+    color: $dark;
+    font-family: $raleway;
+}
+// login and register spec, creation form spec : submit btn
+.login-form > input[type=submit], 
+.register-form > input[type=submit],
+.creation-form > input[type=submit] {
+    border-color: $grad_pink;
+    background-color: $beige;
+    color: $dark;
+    font-family: $raleway;
+}
+// fb and twitter btns in login/register forms
+.auth-login {
+    display: flex;
+    justify-content: center;
+    .login__fb, .login__twitter {
+        margin: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px $dark,
+            inset 0 0 5px $dark;
+        a {
+            color: $darker;
+            text-decoration: none;
+            font-family: $jua;
+          }
+    }
+    .login__fb {
+        background-color: #365899;
+    }
+    .login__twitter {
+        background-color: #1DA1F2;
+    }
+}

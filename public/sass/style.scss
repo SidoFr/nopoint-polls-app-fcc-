@@ -1,0 +1,47 @@
+@import 'partials/normalize';
+@import 'partials/variables';
+@import 'partials/_nav';
+@import 'partials/forms';
+@import 'partials/polls';
+@import 'partials/home';
+@import 'partials/poll';
+@import 'partials/account';
+@import 'partials/flash';
+@import 'partials/policy';
+
+
+body {
+    margin: 0;
+    background-color: $wed_blue;
+    box-sizing: border-box;
+    position: relative;
+    *:after, *:before {
+        box-sizing: inherit;
+    }
+}
+header {
+    margin-bottom: 50px;
+}
+h2 {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+footer {
+    text-align: center;
+    a {
+        color: pink;
+    }
+}
+input[type=submit] {
+    cursor: pointer;
+}
+button {
+    outline: none;
+    a {
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,104 @@
+extends layout
+
+block content
+    //pre=h.dump(locals)
+    .content-text
+        h1 #{title}
+        form.goVote(action=`/poll/${slug}` method="POST")
+            - for (var i = 0; i < options.length; i++)
+                label.option= options[i]
+                input(type="radio" name="option" value=options[i])
+                p.vote= votes[i]   
+            input(type="submit" id="vote" value="Vote")
+            
+    .content-chart
+        canvas(id="myChart")
+
+    .buttons
+        .share__twitter: button.twitter Share it on Twitter
+        .share__fb: button.fb Share it on Facebook
+
+    block scripts
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js")
+        script.
+            const options = document.querySelectorAll('.option');
+            const votes = document.querySelectorAll('.vote');
+            const title = document.querySelector('h1').innerHTML;
+            const optionsArray = [];
+            const votesArray = [];
+            options.forEach(elt => {
+                return optionsArray.push(elt.innerHTML);
+            });
+            votes.forEach(elt => {
+                return votesArray.push(elt.innerHTML);
+            });
+            window.onload = function() {
+                ctx = document.querySelector('#myChart').getContext('2d');
+                myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: optionsArray,
+                        datasets: [{
+                            data: votesArray,
+                            label: 'votes',
+                            backgroundColor: [
+                                '#db36a4',
+                                '#E47A6C',
+                                '#E99D50',
+                                '#EEBC37',
+                                '#f7ff00',
+                                '#FFE000',
+                                '#A4B408',
+                                '#799F0C',
+                                '#487933',
+                                '#00416A'
+                            ],
+                            borderColor: 'grey',
+                            borderWidth: 1,
+                        }],
+                    },
+                });
+                //************config sdkfacebook for share btn **************************
+                 window.fbAsyncInit = function() {
+                    FB.init({
+                    appId            : '235006593926064',
+                    autoLogAppEvents : true,
+                    xfbml            : true,
+                    version          : 'v3.0'
+                    });
+                };
+                (function(d, s, id){
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                //**************************************************************************
+                    function share(evt) {
+                        if (evt.target === twitter) {
+                        const twitterUrl = "https://twitter.com/intent/tweet";
+                        const text = `I just played with No points poll app, have a look at that poll: ${title}`;
+                        const hashtags = "freecodecamp,nopointspoll";
+                        window.open(twitterUrl + "?text=" + text + ";hashtags=" + hashtags, "width= 500, height= 300");
+                        }else if (evt.target === facebook) {
+                            const desc = `I just played with No points poll app, have a look at that poll: ${title}`;
+                            FB.ui({
+                                method: 'share_open_graph',
+                                action_type: 'og.shares',
+                                action_properties: JSON.stringify({
+                                    object: {
+                                        'og:url': 'https://nopoint-polls-app-iancncpmko.now.sh',
+                                        'og:title': 'No points poll app!',
+                                        'og:description': desc,
+                                    }
+                                }),
+                            }, function(response){});
+                        }
+                    }
+                    const twitter = document.querySelector('.twitter');
+                    twitter.addEventListener('click', share);
+                    const facebook = document.querySelector('.fb');
+                    facebook.addEventListener('click', share);
+            };
+

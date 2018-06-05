@@ -1,0 +1,23 @@
+.flash {
+    width: 20%;
+    background: $grad_green;
+    box-shadow: 10px 20px 10px -5px $dark;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    position: absolute;
+    top: 75px;
+    left: 200px;
+    border-radius: 3px;
+    display: flex;
+    font-family: $raleway;
+    color: $dark;
+    &__remove {
+        width: 40px;
+        height: 40px;
+        margin: 7px;
+        background-color:  $grad_pink;
+        cursor: pointer;
+        border: 1px solid $dark;
+        box-shadow: 0 0 5px $dark;
+    }
+}

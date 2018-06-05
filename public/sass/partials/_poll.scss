@@ -1,0 +1,72 @@
+.content-text {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    font-family: $raleway;
+    @media #{$phone}, #{$big_screen} {
+        padding-bottom: 0;
+    }
+    h1 {
+        font-size: 2.7em;
+        line-height: 1.5em;
+        font-family: $jua;
+        color: $grad_pink;
+    }
+    #vote {
+        width: 75px;
+        padding: 15px;
+        margin-top: 25px;
+        background-color: $grad_pink;
+        border: outset 2px $beige;
+        color: $beige;
+    }
+    .vote {
+        display: none;
+    }
+    label.option {
+        font-size: 1.1em;
+    }
+}
+.content-chart {
+    width: 600px;
+    margin: auto;
+    @media #{$phone} {
+        width: 375px;
+        height: 250px;
+    }
+    @media #{$tablette} {
+        width: 500px;
+        height: 350px;
+    }
+}
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+   margin: 20px 0; 
+    .share__twitter, .share__fb {
+        flex: 1;
+        text-align: center;
+        button {
+            width: 130px;
+            height: 50px;
+            border-radius: 5px;
+            border: 2px solid $soft;
+            box-shadow: 0 0 10px 1px $soft;
+            cursor: pointer;
+            color: $darker;
+            font-family: $raleway;
+        } 
+    }
+}
+.share__twitter {
+    button {
+        background-color: #1DA1F2;
+    }
+}
+.share__fb {
+    button {
+        background-color: #365899;
+    } 
+}

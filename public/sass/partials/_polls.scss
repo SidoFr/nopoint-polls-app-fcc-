@@ -1,0 +1,54 @@
+
+/* all polls */
+.all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    &__poll {
+        width: 250px;
+        height: 150px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;  
+        padding: 7px;
+        font-size: 1.2em; 
+        font-family: $jua;
+        border-radius: 10px;
+        margin: 20px;
+        box-shadow: 10px 10px 10px -5px $soft;
+        @media #{$big_screen} {
+            margin: 40px;
+        }
+       a {
+            color: $soft;
+            text-decoration: none;  
+        }  
+    }
+    @for $i from 1 through length($grad_list) {
+        div:nth-child(#{length($grad_list)}n+#{$i}) {
+            background-color: nth($grad_list, $i);
+        }
+    }
+    &__button {
+        text-align: center;
+        margin: 50px 0;
+        @media #{$big_screen} {
+            margin: 100px 0;
+        }
+    }
+    &__create-poll {
+        width: 110px;
+        height: 110px;
+        border-radius: 180px;
+        background-color: $grad_pink;
+        border: 2px solid $beige;
+        box-shadow: 0 0 15px $dark;
+        a {
+            color: $beige;
+            font-family: $raleway;
+            line-height: 1.4em;
+            font-size: 1.2em;
+        }
+    }
+}

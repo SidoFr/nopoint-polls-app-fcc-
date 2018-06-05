@@ -1,0 +1,71 @@
+.account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.my-polls-list {
+    width: 50%;
+    margin: 50px auto; 
+    @media #{$phone} {
+        width: 100%;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @for $i from 1 through length($grad_list) {
+            li:nth-child(#{length($grad_list)}n+#{$i}) {
+                background-color: rgba(nth($grad_list, $i), 0.8);
+            }
+        }
+        li {
+            width: 80%;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            .link {
+                padding: 10px;
+                margin-bottom: 5px;
+                font-size: 1.2em;
+                a{ 
+                    color: $dark;
+                    font-family: $jua;
+                }
+            } 
+            button {
+                border-radius: 180px;
+                padding: 7px;
+                border: outset 2px $soft;
+                background-color: $beige;
+                margin: 0 5px;
+                box-shadow: 0 0 8px 1px $dark;
+                font-family: $raleway;
+            }
+        }
+        button:first-of-type {
+            a {
+                color: red;
+            }
+        }
+        button:nth-of-type(2), button:nth-of-type(3) {
+            a {
+                color: $dark;
+            }
+        }
+    }
+}
+.create-poll {
+    width: 110px;
+    height: 110px;
+    border-radius: 180px;
+    background-color: $grad_pink;
+    border: 2px solid $dark;
+    box-shadow: 0 0 5px $darker;
+    a {
+        color: $darker;
+        font-family: $raleway;
+        line-height: 1.4em;
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,57 @@
+extends layout
+
+block content
+    .account
+        button.create-poll: a(href="/create-poll") Create a poll!
+        .my-polls-list
+            ul
+                each poll in polls
+                    li 
+                        .link: a(href=`/poll/${poll.slug}`) #{poll.title}
+                        button: a(href=`/poll/${poll.slug}/delete`) delete
+                        button: a(href=`/poll/${poll.slug}/edit`) edit
+                        button: a(href=`/poll/${poll.slug}`) results               
+        button.rgpd__button Policy regarding your personal datas
+        .rgpd__pop
+            p.rgpd__text 
+                | 1. This web application uses cookies to keep track of users activities:
+                | this way you can go through the site and it will keep your name(if logged in), votes, and created polls in memory.
+                br 
+                | 2. A registered user gives us a name and a password.
+                br
+                | 3. A facebook or twitter logged in user gives us the name he uses on these platforms.
+                br
+                | 4. A deleted poll is completely deleted from our database.
+                br
+                | 5. If you wish to be deleted from our database, send us an email with the name of the app:
+                br
+                span.rgpd__mail nepenthes.webapps@gmail.com
+            p.rgpd__textFr 
+                | 1. Cette application web utilise des cookies pour garder une trace de l'activité de ces utilisateurs:
+                | vous pouvez ainsi parcourir le site et il garde en mémoire vos nom(si log), votes et sondages créés.
+                br
+                | 2. Un utilisateur enregistré sr le site nous fourni un nom et un mot de passe.
+                br
+                | 3. Un utilisateur log via facebook ou twitter nous fourni le nom qu'il utilise sur ces plateformes.
+                br
+                | 4. Un sondage supprimé est définitivement supprimé de notre database.
+                br
+                | 5. Si vous souhaitez être supprimé de notre database, envoyez-nous un mail en précisant le nom de l'app:
+                br
+                span.rgpd__mail nepenthes.webapps@gmail.com
+    block scripts
+        script.
+            const rgpd_pop = document.querySelector('.rgpd__pop');
+            const rgpd = document.querySelector('.rgpd__button');
+            rgpd.addEventListener('click', pop => {
+                if (rgpd_pop.style.display === 'none') {
+                    rgpd_pop.style.display = 'flex';
+                }else
+                    rgpd_pop.style.display = 'none';
+            });
+            rgpd_pop.addEventListener('click', depop => {
+                if (rgpd_pop.style.display === 'none') {
+                    rgpd_pop.style.display = 'flex';
+                }else
+                    rgpd_pop.style.display = 'none';
+            });

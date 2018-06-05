@@ -1,0 +1,80 @@
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 5px solid $grad_orange;
+    background-image: $grad2;
+    padding: 30px 0;
+    @media #{$phone} {
+        border-bottom-color: $grad_pink;
+    }
+    li {
+        padding: 10px;
+        
+    }
+    &__home {
+        flex: 1; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 2px solid $grad_orange;
+        font-size: 1.2em;
+        font-family: $raleway;
+        a {
+          color: $dark;
+          text-decoration: none;
+        }
+        @media #{$phone} {
+           border-right: none;
+           border-left: 2px solid $grad_pink;
+        }
+    }
+    &__account, &__register {
+      flex: 1; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 2px solid $grad_orange;
+      font-size: 1.2em;
+      font-family: $raleway;
+      a {
+        color: $dark;
+        text-decoration: none;
+      }
+      @media #{$phone} {
+        border-left: none;
+    }
+    }
+    &__login, &__logout {
+        flex: 1; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-left: 2px solid $grad_orange;
+        font-size: 1.2em;
+        font-family: $raleway;
+        a {
+          color: $dark;
+          text-decoration: none;
+        } 
+        @media #{$phone} {
+            border-left-color: $grad-pink;
+        }
+    }
+    &__title {
+        flex: 2;
+        border-right: 2px solid $grad_orange;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: $jua;
+        a {
+            color: $beige;
+            text-decoration: none;
+          }
+        @media #{$phone} {
+            order: -1;
+            flex: none;
+            border-right-color: $grad-pink;
+        }
+    }
+}

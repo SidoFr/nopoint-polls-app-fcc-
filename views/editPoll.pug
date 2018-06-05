@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h2.modify__title Edit poll
+    form.modify(action=`/poll/${slug}/edit` method="POST")
+        label(for="title") Title
+        input(type="text" name="title" value=title)
+        label.optionLabel Options
+        each option in options
+            input(type="text" name="option" value=option)
+        - const more = (10 - options.length)
+        - for (var i = 1; i < more; i++)
+            textarea(class="opt more" name="option" maxlength="100" placeholder="100 max carac" autocomplete="off")
+        input(type="submit" value="Save Changes")

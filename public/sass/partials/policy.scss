@@ -1,0 +1,26 @@
+.rgpd__pop {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    background-color: $wed_blue;
+    box-shadow: 20px 20px 10px 0px $dark;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    color: $soft;
+    font-family: $raleway;
+    span {
+        color: $darker;
+    }
+}
+.rgpd__button {
+    width: 260px;
+    height: 55px;
+    padding: 8px;
+    color: $dark;
+    background-color: $wed_blue;
+    margin-bottom: 15px;
+    font-family: $raleway;
+    cursor: pointer;
+}

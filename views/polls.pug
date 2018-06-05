@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    //pre=h.dump(locals)
+    .all
+        each poll in polls
+            .all__poll: a(href=`/poll/${poll.slug}`)
+                h3 #{poll.title}
+    .all__button: button.all__create-poll: a(href="/create-poll") Create a poll!

@@ -1,0 +1,44 @@
+doctype html
+html
+    head
+        title= 'No point polls app'
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet" href="/css/style.css")
+        link(rel="shortcut icon" type="image/png" href="/img/icon.png")
+        link(href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Jua|Raleway:500" rel="stylesheet")
+        meta(property="og:title" content=`${title}`) 
+        meta(property="og:description" content="check this poll")
+        
+    body
+        block header
+            //pre=h.dump(locals)
+            header
+                ul.menu
+                    if user
+                        li.menu__home: a(href="/polls") Home
+                        li.menu__title: a(href="/") No point polls app!
+                        li.menu__account: a(href="/my-polls") My Polls
+                        li.menu__logout: a(href='/logout') Logout
+                    else
+                        li.menu__home: a(href="/polls") Home
+                        li.menu__title: a(href="/") No point polls app!
+                        li.menu__register: a(href="/register") Register
+                        li.menu__login: a(href="/login") Login
+
+        block content
+
+        block footer
+        
+        block messages
+            if locals.flashes
+                .inner-flashes
+                    .flash-messages
+                        - const categories = Object.keys(locals.flashes)
+                        each cat in categories
+                            each message in flashes[cat]
+                                .flash
+                                    p.flash__text!= message
+                                    button.flash__remove(onClick="this.parentElement.remove()") X
+
+
