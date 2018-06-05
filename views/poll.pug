@@ -79,9 +79,9 @@ block content
                     const url = 'https://nopointpollsapp.herokuapp.com/';
                         if (evt.target === twitter) {
                         const twitterUrl = "https://twitter.com/intent/tweet";
-                        const text = `I just played with No points poll app, have a look at that poll: ${title}`;
-                        const hashtags = "freecodecamp,nopointpoll";
-                        window.open(twitterUrl + "?text=" + text + "?link=" + url + ";hashtags=" + hashtags, "width= 500, height= 300");
+                        const text = `I just played with No points poll app, have a look at that poll: ${title}.${url}`;
+                        const hashtags = "nopointpoll";
+                        window.open(twitterUrl + "?text=" + text + ";hashtags=" + hashtags, "width= 500, height= 300");
                         }else if (evt.target === facebook) {
                             const desc = `I just played with No points poll app, have a look at that poll: ${title}`;
                             FB.ui({
