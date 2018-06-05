@@ -28,7 +28,14 @@ exports.createPoll = (req, res) => {
 // save created poll
 exports.sendPoll = async (req, res) => {
     // get all variables I need
-    const creator = req.user.name;
+        let creator = '';
+    if (req.user.facebook) {
+        creator = req.user.facebook.name;
+    }else if (req.user.twitter) {
+        creator = req.user.twitter.name;
+    } else {
+        creator = req.user.name;
+    }
     const title = req.body.title;
     const array = Object.keys(req.body).map(key => req.body[key]);
     const options = [];
