@@ -2,15 +2,15 @@ extends layout
 
 block content
     .account
-        button.create-poll: a(href="/create-poll") Create a poll!
+        .create-poll: a(href="/create-poll") Create a poll!
         .my-polls-list
             ul
                 each poll in polls
                     li 
                         .link: a(href=`/poll/${poll.slug}`) #{poll.title}
-                        button: a(href=`/poll/${poll.slug}/delete`) delete
-                        button: a(href=`/poll/${poll.slug}/edit`) edit
-                        button: a(href=`/poll/${poll.slug}`) results               
+                        .poll-button: a(href=`/poll/${poll.slug}/delete`) delete
+                        .poll-button: a(href=`/poll/${poll.slug}/edit`) edit
+                        .poll-button: a(href=`/poll/${poll.slug}`) results               
         button.rgpd__button Policy regarding your personal datas
         .rgpd__pop
             p.rgpd__text 

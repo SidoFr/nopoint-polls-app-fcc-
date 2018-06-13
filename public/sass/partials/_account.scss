@@ -33,7 +33,7 @@
                     font-family: $jua;
                 }
             } 
-            button {
+            .poll-button {
                 border-radius: 180px;
                 padding: 7px;
                 border: outset 2px $soft;
@@ -43,12 +43,12 @@
                 font-family: $raleway;
             }
         }
-        button:first-of-type {
+        .poll-button:first-of-type {
             a {
                 color: red;
             }
         }
-        button:nth-of-type(2), button:nth-of-type(3) {
+        .poll-button:nth-of-type(2), .poll-button:nth-of-type(3) {
             a {
                 color: $dark;
             }
