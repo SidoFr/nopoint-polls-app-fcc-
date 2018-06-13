@@ -12,8 +12,7 @@ router.get('/register', userController.registerForm);
 router.post(
     '/register',
     userController.validateRegister,
-    userController.register,
-    userController.login);
+    userController.register);
 
 router.get('/login', userController.loginForm);
 router.post('/login', userController.login);

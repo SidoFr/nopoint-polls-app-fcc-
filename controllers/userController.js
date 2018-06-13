@@ -23,7 +23,7 @@ exports.validateRegister = (req, res, next) => {
     next();
 };
 // register step2: create user and save
-exports.register = (req, res, next) => {
+exports.register = (req, res) => {
     // import schema & pwd
     const userLocal = new Local({ name: req.body.name });
     // passport-local-mongoose method
@@ -33,7 +33,8 @@ exports.register = (req, res, next) => {
             next(err);
         }
     });
-    next(null, userLocal);
+    req.flash('success','Registered! You can now login!');
+    res.redirect('/login');
 };
 
 // go to login form
