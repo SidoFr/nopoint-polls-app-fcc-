@@ -33,6 +33,9 @@
             background-color: $beige;
             border: outset 3px $soft;
             line-height: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             a {
                 color: $soft;
             }

@@ -33,23 +33,24 @@
                     font-family: $jua;
                 }
             }
-            .poll-button {
+            .poll-button-delete, .poll-button-edit, .poll-button-see {
                 border-radius: 180px;
                 padding: 7px;
                 border: outset 2px $soft;
                 background-color: $beige;
                 margin: 0 5px;
                 box-shadow: 0 0 8px 1px $dark;
-                font-family: $raleway;
             }
             .poll-button-delete {
                 a {
                     color: red;
+                    font-family: $raleway;
                 }
             }
             .poll-button-edit, .poll-button-see {
                 a {
                     color: $dark;
+                    font-family: $raleway;
                 }
             }     
         } 
@@ -60,7 +61,7 @@
     height: 110px;
     border-radius: 180px;
     background-color: $grad_pink;
-    border: 2px solid $dark;
+    border: 2px solid $beige;
     box-shadow: 0 0 5px $darker;
     display: flex;
     align-items: center;

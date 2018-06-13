@@ -544,7 +544,10 @@ textarea {
       border-radius: 5px;
       background-color: #fafcdb;
       border: outset 3px #4f4e4e;
-      line-height: 1.5em; }
+      line-height: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
       .home__buttons__discover a, .home__buttons__log a, .home__buttons__login a {
         color: #4f4e4e; }
 
@@ -656,25 +659,26 @@ footer {
         .my-polls-list ul li .link a {
           color: #323232;
           font-family: "Jua", sans-serif; }
-      .my-polls-list ul li .poll-button {
+      .my-polls-list ul li .poll-button-delete, .my-polls-list ul li .poll-button-edit, .my-polls-list ul li .poll-button-see {
         border-radius: 180px;
         padding: 7px;
         border: outset 2px #4f4e4e;
         background-color: #fafcdb;
         margin: 0 5px;
-        box-shadow: 0 0 8px 1px #323232;
-        font-family: "Raleway", sans-serif; }
+        box-shadow: 0 0 8px 1px #323232; }
       .my-polls-list ul li .poll-button-delete a {
-        color: red; }
+        color: red;
+        font-family: "Raleway", sans-serif; }
       .my-polls-list ul li .poll-button-edit a, .my-polls-list ul li .poll-button-see a {
-        color: #323232; }
+        color: #323232;
+        font-family: "Raleway", sans-serif; }
 
 .create-poll {
   width: 110px;
   height: 110px;
   border-radius: 180px;
   background-color: #ff0080;
-  border: 2px solid #323232;
+  border: 2px solid #fafcdb;
   box-shadow: 0 0 5px #080808;
   display: flex;
   align-items: center;
