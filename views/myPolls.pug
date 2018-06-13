@@ -8,9 +8,9 @@ block content
                 each poll in polls
                     li 
                         .link: a(href=`/poll/${poll.slug}`) #{poll.title}
-                        .poll-button: a(href=`/poll/${poll.slug}/delete`) delete
-                        .poll-button: a(href=`/poll/${poll.slug}/edit`) edit
-                        .poll-button: a(href=`/poll/${poll.slug}`) results               
+                        .poll-button-delete: a(href=`/poll/${poll.slug}/delete`) delete
+                        .poll-button-edit: a(href=`/poll/${poll.slug}/edit`) edit
+                        .poll-button-see: a(href=`/poll/${poll.slug}`) results               
         button.rgpd__button Policy regarding your personal datas
         .rgpd__pop
             p.rgpd__text 

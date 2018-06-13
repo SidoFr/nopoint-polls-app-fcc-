@@ -44,6 +44,9 @@
         background-color: $grad_pink;
         border: 2px solid $beige;
         box-shadow: 0 0 15px $dark;
+        margin: auto;
+        display: flex;
+        align-items: center;
         a {
             color: $beige;
             font-family: $raleway;
