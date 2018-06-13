@@ -502,7 +502,10 @@ textarea {
     border-radius: 180px;
     background-color: #ff0080;
     border: 2px solid #fafcdb;
-    box-shadow: 0 0 15px #323232; }
+    box-shadow: 0 0 15px #323232;
+    margin: auto;
+    display: flex;
+    align-items: center; }
     .all__create-poll a {
       color: #fafcdb;
       font-family: "Raleway", sans-serif;
@@ -535,14 +538,14 @@ textarea {
     @media only screen and (min-width: 320px) and (max-width: 736px) {
       .home__buttons {
         width: 98%; } }
-    .home__buttons button {
+    .home__buttons__discover, .home__buttons__log, .home__buttons__login {
       width: 120px;
       height: 50px;
       border-radius: 5px;
       background-color: #fafcdb;
       border: outset 3px #4f4e4e;
       line-height: 1.5em; }
-      .home__buttons button a {
+      .home__buttons__discover a, .home__buttons__log a, .home__buttons__login a {
         color: #4f4e4e; }
 
 footer {
@@ -653,7 +656,7 @@ footer {
         .my-polls-list ul li .link a {
           color: #323232;
           font-family: "Jua", sans-serif; }
-      .my-polls-list ul li button {
+      .my-polls-list ul li .poll-button {
         border-radius: 180px;
         padding: 7px;
         border: outset 2px #4f4e4e;
@@ -661,10 +664,10 @@ footer {
         margin: 0 5px;
         box-shadow: 0 0 8px 1px #323232;
         font-family: "Raleway", sans-serif; }
-    .my-polls-list ul button:first-of-type a {
-      color: red; }
-    .my-polls-list ul button:nth-of-type(2) a, .my-polls-list ul button:nth-of-type(3) a {
-      color: #323232; }
+      .my-polls-list ul li .poll-button-delete a {
+        color: red; }
+      .my-polls-list ul li .poll-button-edit a, .my-polls-list ul li .poll-button-see a {
+        color: #323232; }
 
 .create-poll {
   width: 110px;
@@ -672,9 +675,12 @@ footer {
   border-radius: 180px;
   background-color: #ff0080;
   border: 2px solid #323232;
-  box-shadow: 0 0 5px #080808; }
+  box-shadow: 0 0 5px #080808;
+  display: flex;
+  align-items: center;
+  text-align: center; }
   .create-poll a {
-    color: #080808;
+    color: #fafcdb;
     font-family: "Raleway", sans-serif;
     line-height: 1.4em;
     font-size: 1.2em; }
